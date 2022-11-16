@@ -3,7 +3,6 @@ footer {
 }
 
 .humidity-info h6,
-.precipitation-info h6,
 .wind-info h6 {
   line-height: 1;
   color: rgb(51, 50, 50);
@@ -32,23 +31,24 @@ footer {
 }
 
 .forecast-days span {
-  margin-left: 20px;
+  margin-left: 10px;
   font-size: 20px;
   font-weight: bold;
 }
 
 .forecast-icons span {
-  margin-left: 25px;
+  margin-left: 18px;
   font-size: 20px;
 }
 
 .forecast-celsius span {
-  margin-left: 10px;
+  margin-left: 6px;
   font-size: 15px;
 }
 
 .forecast-fahrenheit span {
-  margin-left: 10.5px;
+  margin-top: 3px;
+  margin-left: 7px;
   font-size: 15px;
 }
 
@@ -85,6 +85,7 @@ footer {
 
 #current-weather-description {
   font-size: 15px;
+  text-transform: capitalize;
 }
 
 #current-temperature {
@@ -98,7 +99,6 @@ footer {
 }
 
 #humidity-value,
-#precipitation-value,
 #wind-value {
   margin-left: 5px;
 }
