@@ -1,3 +1,7 @@
+footer {
+  text-align: center;
+}
+
 .humidity-info h6,
 .precipitation-info h6,
 .wind-info h6 {
@@ -105,4 +109,8 @@
 
 #forecast-info {
   margin: 10px 0px 0px 0px;
+}
+
+#github-link {
+  text-decoration: none;
 }
