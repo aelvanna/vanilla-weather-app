@@ -21,6 +21,7 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+
 function displayWeatherInfo(response) {
   let temperatureElement = Math.round(response.data.temperature.current);
   let humidityElement = response.data.temperature.humidity;
@@ -29,6 +30,7 @@ function displayWeatherInfo(response) {
   let dateElement = formatDate(response.data.time * 1000);
   let iconElement = document.querySelector("#icon");
 
+  document.querySelector("#current-city").innerHTML = response.data.city;
   document.querySelector("#current-temperature").innerHTML = temperatureElement;
   document.querySelector("#humidity-value").innerHTML = humidityElement + "%";
   document.querySelector("#wind-value").innerHTML = windElement + "km/h";
@@ -39,11 +41,26 @@ function displayWeatherInfo(response) {
 }
 
 let weatherApiKey = "8teb9f1fao00b420ac25b3a87666cdf6";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Brisbane&key=${weatherApiKey}`;
 
-axios.get(apiUrl).then(displayWeatherInfo);
+function search(city) {
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${weatherApiKey}`;
+  let apiUrlForecast = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${weatherApiKey}`;
+  axios.get(apiUrl).then(displayWeatherInfo);
+  axios.get(apiUrlForecast).then(displayForecast);
+}
 
-let apiUrlForecast = `https://api.shecodes.io/weather/v1/forecast?query=Brisbane&key=${weatherApiKey}`;
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
 
-console.log(apiUrlForecast);
-console.log(apiUrl);
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+search("Brisbane City");
+
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let dailyForecast = response.data.daily;
+}

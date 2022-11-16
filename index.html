@@ -16,6 +16,35 @@
   </head>
   <body>
     <div id="app-container">
+      <div class="form-container">
+        <form id="search-form">
+          <div class="row">
+            <div class="col-5">
+              <input
+                type="text"
+                class="form-control"
+                id="city-input"
+                autocomplete="off"
+                placeholder="Enter a city.."
+              />
+            </div>
+            <div class="col-2" id="search-button">
+              <input
+                class="btn btn-primary w-90"
+                type="submit"
+                value="Search"
+              />
+            </div>
+            <div class="col-2" id="current-location-button">
+              <input
+                class="btn btn-primary w-90"
+                type="submit"
+                value="Current Location"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
       <div id="weather-info-container">
         <div class="row" id="weather-info">
           <div class="col-6" id="today-section">
@@ -43,46 +72,11 @@
               <h6 id="wind-value"></h6>
             </div>
           </div>
-          <div class="col-sm" id="forecast-container">
-            <h1 id="forecast-title">Forecast</h1>
-            <div id="forecast-info">
-              <div class="d-flex forecast-days">
-                <span id="day-1">Thu</span>
-                <span id="day-2">Fri</span>
-                <span id="day-3">Sat</span>
-                <span id="day-4">Sun</span>
-                <span id="day-5">Mon</span>
-                <span id="day-6">Mon</span>
-                <span id="day-7">Mon</span>
-              </div>
-              <div class="d-flex forecast-icons">
-                <span id="icon-1">🌤️</span>
-                <span id="icon-2">🌤️</span>
-                <span id="icon-3">🌤️</span>
-                <span id="icon-4">🌤️</span>
-                <span id="icon-5">🌤️</span>
-                <span id="icon-6">🌤️</span>
-                <span id="icon-7">🌤️</span>
-              </div>
-              <div class="d-flex forecast-celsius">
-                <span><span id="celsius-1">30</span>°C</span>
-                <span><span id="celsius-2">24</span>°C</span>
-                <span><span id="celsius-3">34</span>°C</span>
-                <span><span id="celsius-4">32</span>°C</span>
-                <span><span id="celsius-5">31</span>°C</span>
-                <span><span id="celsius-6">31</span>°C</span>
-                <span><span id="celsius-7">31</span>°C</span>
-              </div>
-              <div class="d-flex forecast-fahrenheit">
-                <span id="fahrenheit-1"><span>60</span>°F</span>
-                <span id="fahrenheit-2"><span>50</span>°F</span>
-                <span id="fahrenheit-3"><span>40</span>°F</span>
-                <span id="fahrenheit-4"><span>70</span>°F</span>
-                <span id="fahrenheit-5"><span>80</span>°F</span>
-                <span id="fahrenheit-6"><span>80</span>°F</span>
-                <span id="fahrenheit-7"><span>80</span>°F</span>
-              </div>
-            </div>
+          <div class="col-1">
+            <div class="vr" style="height: 250px"></div>
+          </div>
+          <div class="col-5">
+            <h1>Forecast</h1>
           </div>
         </div>
       </div>
