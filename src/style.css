@@ -8,22 +8,6 @@ footer {
   color: rgb(51, 50, 50);
 }
 
-.weather-temperature {
-  line-height: 1;
-}
-
-.weather-temperature .units {
-  font-size: 15px;
-  position: relative;
-  bottom: 10px;
-}
-
-.weather-temperature .icon {
-  font-size: 30px;
-  margin-right: 5px;
-  line-height: 1;
-}
-
 .misc-weather h6 {
   font-size: 15px;
   text-align: left;
@@ -81,6 +65,17 @@ footer {
 
 #last-updated {
   font-size: 15px;
+}
+
+#temperature-info {
+  height: 50px;
+  margin-top: 15px;
+}
+
+.units {
+  font-size: 15px;
+  position: relative;
+  bottom: 10px;
 }
 
 #current-weather-description {

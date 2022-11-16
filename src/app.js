@@ -27,6 +27,7 @@ function displayWeatherInfo(response) {
   let windElement = Math.round(response.data.wind.speed);
   let descriptionElement = response.data.condition.description;
   let dateElement = formatDate(response.data.time * 1000);
+  let iconElement = document.querySelector("#icon");
 
   document.querySelector("#current-temperature").innerHTML = temperatureElement;
   document.querySelector("#humidity-value").innerHTML = humidityElement + "%";
@@ -34,6 +35,7 @@ function displayWeatherInfo(response) {
   document.querySelector("#current-weather-description").innerHTML =
     descriptionElement;
   document.querySelector("#last-updated").innerHTML = dateElement;
+  iconElement.setAttribute("src", response.data.condition.icon_url);
 }
 
 let weatherApiKey = "8teb9f1fao00b420ac25b3a87666cdf6";
