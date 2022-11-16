@@ -1,0 +1,108 @@
+.humidity-info h6,
+.precipitation-info h6,
+.wind-info h6 {
+  line-height: 1;
+  color: rgb(51, 50, 50);
+}
+
+.weather-temperature {
+  line-height: 1;
+}
+
+.weather-temperature .units {
+  font-size: 15px;
+  position: relative;
+  bottom: 10px;
+}
+
+.weather-temperature .icon {
+  font-size: 30px;
+  margin-right: 5px;
+  line-height: 1;
+}
+
+.misc-weather h6 {
+  font-size: 15px;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.forecast-days span {
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.forecast-icons span {
+  margin-left: 25px;
+  font-size: 20px;
+}
+
+.forecast-celsius span {
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.forecast-fahrenheit span {
+  margin-left: 10.5px;
+  font-size: 15px;
+}
+
+#app-container {
+  border: solid #085fd7 4px;
+  border-radius: 0.5em;
+  width: 800px;
+  height: 400px;
+  margin: 0 auto;
+  margin-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#today-section {
+  margin: 80px 0px 0px 0px;
+}
+
+#weather-info-container h1 {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#weather-info {
+  margin: 10px 55px 0px 50px;
+}
+
+#current-city {
+  font-size: 25px;
+}
+
+#last-updated {
+  font-size: 15px;
+}
+
+#current-weather-description {
+  font-size: 15px;
+}
+
+#current-temperature {
+  font-size: 30px;
+  margin-right: 5px;
+}
+
+#today-section {
+  width: 290px;
+  border-right: grey ridge 2px;
+}
+
+#humidity-value,
+#precipitation-value,
+#wind-value {
+  margin-left: 5px;
+}
+
+#forecast-title {
+  margin: 120px 0px 0px 20px;
+}
+
+#forecast-info {
+  margin: 10px 0px 0px 0px;
+}
