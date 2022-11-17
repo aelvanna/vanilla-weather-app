@@ -30,6 +30,8 @@ function displayWeatherInfo(response) {
   let dateElement = formatDate(response.data.time * 1000);
   let iconElement = document.querySelector("#icon");
 
+  celsiusTemperature = response.data.temperature.current;
+
   document.querySelector("#current-city").innerHTML = response.data.city;
   document.querySelector("#current-temperature").innerHTML = temperatureElement;
   document.querySelector("#humidity-value").innerHTML = humidityElement + "%";
@@ -44,9 +46,7 @@ let weatherApiKey = "8teb9f1fao00b420ac25b3a87666cdf6";
 
 function search(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${weatherApiKey}`;
-  let apiUrlForecast = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${weatherApiKey}`;
   axios.get(apiUrl).then(displayWeatherInfo);
-  axios.get(apiUrlForecast).then(displayForecast);
 }
 
 function handleSubmit(event) {
@@ -58,9 +58,30 @@ function handleSubmit(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-search("Brisbane City");
+let celsiusTemperature = null;
 
-function displayForecast(response) {
-  console.log(response.data.daily);
-  let dailyForecast = response.data.daily;
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  document.querySelector("#current-temperature").innerHTML = Math.round(
+    fahrenheitTemperature
+  );
 }
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  document.querySelector("#current-temperature").innerHTML =
+    Math.round(celsiusTemperature);
+}
+
+search("Brisbane City");

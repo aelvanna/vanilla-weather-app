@@ -33,6 +33,22 @@ footer {
   margin-left: 175px;
 }
 
+#temperature-info .active {
+  color: black;
+  font-weight: bold;
+}
+
+#temperature-info .active:hover {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+#celsius-link,
+#fahrenheit-link {
+  text-decoration: none;
+}
+
 #search-button {
   margin-left: -20px;
 }
@@ -64,10 +80,10 @@ footer {
 
 #temperature-info {
   height: 10px;
-  margin-top: 15px;
+  margin-top: 12px;
 }
 
-.units {
+#units {
   font-size: 15px;
   position: relative;
   bottom: 10px;

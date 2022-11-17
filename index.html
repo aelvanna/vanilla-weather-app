@@ -58,7 +58,10 @@
               <img src="" height="70px" id="icon" />
               <div id="temperature-info">
                 <strong id="current-temperature"></strong
-                ><span class="units">°C | °F</span>
+                ><span id="units"
+                  ><a href="" id="celsius-link" class="active">°C</a> |
+                  <a href="" id="fahrenheit-link">°F</a></span
+                >
               </div>
             </div>
             <div class="misc-weather">
@@ -75,9 +78,7 @@
           <div class="col-1">
             <div class="vr" style="height: 250px"></div>
           </div>
-          <div class="col-5">
-            <h1>Forecast</h1>
-          </div>
+          <div class="col-5"></div>
         </div>
       </div>
     </div>
