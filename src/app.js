@@ -84,4 +84,19 @@ function displayCelsiusTemperature(event) {
     Math.round(celsiusTemperature);
 }
 
+function searchCurrentLocation(position) {
+  let lon = position.coords.longitude;
+  let lat = position.coords.latitude;
+  let url = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${weatherApiKey}`;
+  axios.get(url).then(displayWeatherInfo);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchCurrentLocation);
+}
+
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
 search("Brisbane City");
