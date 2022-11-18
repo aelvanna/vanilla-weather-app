@@ -111,3 +111,18 @@ footer {
 #github-link {
   text-decoration: none;
 }
+
+#forecast-icon-1 {
+  margin-left: -22px;
+  margin-top: -15px;
+}
+
+.forecast-temp-info {
+  margin-top: -15px;
+}
+
+.forecast-temp-info h6 {
+  font-size: 12px;
+  margin-left: -10px;
+  margin-right: 15px;
+}
