@@ -112,17 +112,29 @@ footer {
   text-decoration: none;
 }
 
-#forecast-icon-1 {
-  margin-left: -22px;
-  margin-top: -15px;
+.forecast-container {
+  margin-top: 90px;
+  margin-left: -25px;
+  text-align: left;
 }
 
-.forecast-temp-info {
-  margin-top: -15px;
+#forecast-spacing {
+  margin-top: 0px;
+  margin-right: -450px;
+}
+
+#forecast-day {
+  margin: 0px -50px 15px -140px;
+  text-align: center;
+  font-size: 15px;
+}
+
+#forecast-icon {
+  margin: -25px 0px -15px -70px;
 }
 
 .forecast-temp-info h6 {
   font-size: 12px;
-  margin-left: -10px;
-  margin-right: 15px;
+  margin: 5px 50px 0px -45px;
+  text-align: center;
 }

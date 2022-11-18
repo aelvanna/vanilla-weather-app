@@ -22,6 +22,38 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast-info");
+
+  let forecastHTML = `<span class="row" id="forecast-spacing">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-1">
+        <h6 id="forecast-day">${day}</h6>
+        <img
+          src="http://openweathermap.org/img/wn/10d@2x.png"
+          id="forecast-icon"
+          alt=""
+          width="80"
+        />
+        <div class="forecast-temp-info">
+          <span class="d-flex forecast-temp">
+            <h6 id="temperature-min">22°</h6>
+            <h6 id="temperature-max">26°</h6>
+          </span>
+        </div>
+      </div>
+    </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</span>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
 function displayWeatherInfo(response) {
   let temperatureElement = Math.round(response.data.temperature.current);
   let humidityElement = response.data.temperature.humidity;
@@ -100,3 +132,4 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 search("Brisbane City");
+displayForecast();
