@@ -22,27 +22,39 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast-info");
 
   let forecastHTML = `<span class="row" id="forecast-spacing">`;
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay, index) {
     forecastHTML =
       forecastHTML +
       `
       <div class="col-1">
-        <h6 id="forecast-day">${day}</h6>
+        <h6 id="forecast-day">${formatDay(forecastDay.time)}</h6>
         <img
-          src="http://openweathermap.org/img/wn/10d@2x.png"
+          src= ${forecastDay.condition.icon_url}
           id="forecast-icon"
           alt=""
           width="80"
         />
         <div class="forecast-temp-info">
           <span class="d-flex forecast-temp">
-            <h6 id="temperature-min">22°</h6>
-            <h6 id="temperature-max">26°</h6>
+            <h6 id="temperature-min">${Math.round(
+              forecastDay.temperature.minimum
+            )}°</h6>
+            <h6 id="temperature-max">${Math.round(
+              forecastDay.temperature.maximum
+            )}°</h6>
           </span>
         </div>
       </div>
@@ -54,6 +66,12 @@ function displayForecast() {
 
   forecastElement.innerHTML = forecastHTML;
 }
+
+function getForecast(coordinates) {
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${weatherApiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayWeatherInfo(response) {
   let temperatureElement = Math.round(response.data.temperature.current);
   let humidityElement = response.data.temperature.humidity;
@@ -72,6 +90,8 @@ function displayWeatherInfo(response) {
     descriptionElement;
   document.querySelector("#last-updated").innerHTML = dateElement;
   iconElement.setAttribute("src", response.data.condition.icon_url);
+
+  getForecast(response.data.coordinates);
 }
 
 let weatherApiKey = "8teb9f1fao00b420ac25b3a87666cdf6";
@@ -132,4 +152,3 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 search("Brisbane City");
-displayForecast();
