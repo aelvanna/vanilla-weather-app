@@ -9,7 +9,7 @@ footer {
   height: 400px;
   margin: 0 auto;
   margin-top: 10px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .vr {
@@ -20,21 +20,22 @@ footer {
   margin-left: 175px;
 }
 
-#search-button {
-  margin-left: -20px;
-}
-
 #current-location-button {
   margin-left: -26px;
 }
+
 #search-form {
-  margin-top: 30px;
+  margin-top: 20px;
+}
+
+#search-button {
+  margin-left: -20px;
+  margin-right: 5px;
 }
 
 #weather-info-container h1 {
   font-weight: bold;
   font-size: 30px;
-  margin-top: 30px;
 }
 
 #weather-info {
@@ -42,11 +43,12 @@ footer {
 }
 
 #current-city {
-  font-size: 25px;
+  font-size: 22px;
 }
 
-#last-updated {
-  font-size: 15px;
+#last-updated,
+#current-date-title {
+  font-size: 14px;
 }
 
 #current-weather-description {
@@ -69,7 +71,8 @@ footer {
 }
 
 #today-section {
-  width: 290px;
+  width: 250px;
+  margin-top: 20px;
 }
 
 #humidity-value,
@@ -77,26 +80,23 @@ footer {
   margin-left: 5px;
 }
 
-#wind-unit h6 {
-  margin-right: 6px;
-}
-
 #github-link {
   text-decoration: none;
 }
 
 .forecast-title {
-  margin-top: 90px;
+  margin-top: 80px;
+  margin-left: -40px;
   text-align: left;
 }
 
 .forecast-container {
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 #forecast-spacing {
   margin-top: 0px;
-  margin-right: -350px;
+  margin-right: -370px;
 }
 
 #forecast-day {
