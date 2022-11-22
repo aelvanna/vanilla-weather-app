@@ -39,13 +39,13 @@ function displayForecast(response) {
     forecastHTML =
       forecastHTML +
       `
-      <div class="col-1">
+      <div class="forecast-container col-1">
         <h6 id="forecast-day">${formatDay(forecastDay.time)}</h6>
         <img
           src= ${forecastDay.condition.icon_url}
           id="forecast-icon"
           alt=""
-          width="80"
+          width="50"
         />
         <div class="forecast-temp-info">
           <span class="d-flex forecast-temp">
@@ -84,8 +84,8 @@ function displayWeatherInfo(response) {
 
   document.querySelector("#current-city").innerHTML = response.data.city;
   document.querySelector("#current-temperature").innerHTML = temperatureElement;
-  document.querySelector("#humidity-value").innerHTML = humidityElement + "%";
-  document.querySelector("#wind-value").innerHTML = windElement + "km/h";
+  document.querySelector("#humidity-value").innerHTML = `${humidityElement}%`;
+  document.querySelector("#wind-value").innerHTML = `${windElement} km/h`;
   document.querySelector("#current-weather-description").innerHTML =
     descriptionElement;
   document.querySelector("#last-updated").innerHTML = dateElement;
@@ -111,30 +111,6 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 let celsiusTemperature = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  document.querySelector("#current-temperature").innerHTML = Math.round(
-    fahrenheitTemperature
-  );
-}
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  document.querySelector("#current-temperature").innerHTML =
-    Math.round(celsiusTemperature);
-}
 
 function searchCurrentLocation(position) {
   let lon = position.coords.longitude;

@@ -2,19 +2,6 @@ footer {
   text-align: center;
 }
 
-.humidity-info h6,
-.wind-info h6 {
-  line-height: 1;
-  color: rgb(51, 50, 50);
-  font-size: 15px;
-}
-
-.misc-weather h6 {
-  font-size: 15px;
-  text-align: left;
-  margin-top: 10px;
-}
-
 #app-container {
   border: solid #085fd7 4px;
   border-radius: 0.5em;
@@ -31,22 +18,6 @@ footer {
 
 .form-container {
   margin-left: 175px;
-}
-
-#temperature-info .active {
-  color: black;
-  font-weight: bold;
-}
-
-#temperature-info .active:hover {
-  color: black;
-  cursor: default;
-  text-decoration: none;
-}
-
-#celsius-link,
-#fahrenheit-link {
-  text-decoration: none;
 }
 
 #search-button {
@@ -78,25 +49,23 @@ footer {
   font-size: 15px;
 }
 
-#temperature-info {
-  height: 10px;
-  margin-top: 12px;
+#current-weather-description {
+  font-size: 15px;
+  text-transform: capitalize;
+  margin-top: 15px;
+}
+
+#current-temperature {
+  font-size: 30px;
+  position: relative;
+  top: 8px;
 }
 
 #units {
   font-size: 15px;
   position: relative;
-  bottom: 10px;
-}
-
-#current-weather-description {
-  font-size: 15px;
-  text-transform: capitalize;
-}
-
-#current-temperature {
-  font-size: 30px;
-  margin-right: 5px;
+  bottom: 5px;
+  margin-left: 5px;
 }
 
 #today-section {
@@ -108,29 +77,36 @@ footer {
   margin-left: 5px;
 }
 
+#wind-unit h6 {
+  margin-right: 6px;
+}
+
 #github-link {
   text-decoration: none;
 }
 
-.forecast-container {
+.forecast-title {
   margin-top: 90px;
-  margin-left: -25px;
   text-align: left;
+}
+
+.forecast-container {
+  margin-right: 10px;
 }
 
 #forecast-spacing {
   margin-top: 0px;
-  margin-right: -450px;
+  margin-right: -350px;
 }
 
 #forecast-day {
-  margin: 0px -50px 15px -140px;
+  margin: 0px -60px 15px -140px;
   text-align: center;
   font-size: 15px;
 }
 
 #forecast-icon {
-  margin: -25px 0px -15px -70px;
+  margin: -25px 0px -15px -50px;
 }
 
 .forecast-temp-info h6 {
