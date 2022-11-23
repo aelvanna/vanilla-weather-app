@@ -33,7 +33,7 @@ function formatDay(timestamp) {
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast-info");
-  let forecastHTML = `<span class="row" id="forecast-spacing">`;
+  let forecastHTML = `<span class="row" id="forecast-row">`;
 
   forecast.forEach(function (forecastDay, index) {
     forecastHTML =
@@ -68,7 +68,7 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${weatherApiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${weatherApiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -97,7 +97,7 @@ function displayWeatherInfo(response) {
 let weatherApiKey = "8teb9f1fao00b420ac25b3a87666cdf6";
 
 function search(city) {
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${weatherApiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${weatherApiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherInfo);
 }
 
@@ -115,7 +115,7 @@ let celsiusTemperature = null;
 function searchCurrentLocation(position) {
   let lon = position.coords.longitude;
   let lat = position.coords.latitude;
-  let url = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${weatherApiKey}`;
+  let url = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${weatherApiKey}&units=metric`;
   axios.get(url).then(displayWeatherInfo);
 }
 
